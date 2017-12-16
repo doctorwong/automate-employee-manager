@@ -6,25 +6,51 @@ In this project we are building a front end for an employee management system.  
 
 ## Current Desired Functionality
 
-The application will load a simulated list of employees, and allow modifications to each.  Clicking the employee from the list to the side will bring their file up in the editor.  Your employee will consist of:
+### Employee List
+
+The application will load a simulated list of employees, and allow modifications to each.  Clicking the employee from the list to the side will bring their file up in the editor.
+
+#### Add Employee
+
+"Add Employee" option at the bottom will allow a new employee record to be created, defaulting with the name and title "New Employee", phone number (111)111-1111, and an ID number one greater than the last employee created, so that IDs are never repeated.
+
+### Selected Employee
+
+Your employee will consist of:
 
 * ID
 * Name
 * Phone
 * Title
 
-All fields except for ID are editable.  When saving a change, it will persist as you access other records and navigate back to the desired employee.  The save and cancel buttons will only be accessible when modifications have been made, and the cancel button will revert the employee's file back to the most recently saved version.
+All fields except for ID are editable.  
+
+*ID* - Should be whole numbers between 0 and 9999
+*Name* - Any characters allowed, to a maximum of 30 characters
+*Phone* - Must be a 10 digit phone number
+* Accepted as regular digits or formatted as a US number
+* If entered as the former will be displayed as the latter
+*Title* - Any characters allowed, to a maximum of 30 characters
+
+#### Save, Cancel, Delete
+
+*Save*: When saving a change, it will persist as you access other records and navigate back to the desired employee.
+* If there are unacceptable entries in the fields, an error message will pop up advising the users as to the errors they need to fix.
+*Cancel*: The cancel button will revert the employee's file back to the most recently saved version.
+*Delete*: The delete button will remove the employee record, and is irriversable.  A dialogue asking the user to confirm their desire to remove the record will be presented.
+
+The save and cancel buttons will only be accessible when modifications have been made.
 
 ## Future Functionality
 
-To be aware of, but not currently implemented
+To be aware of, but not currently implemented changes.  Recent implementations are ~~displayed struck through~~
 
-* Phone numbers will be validated 10 digit, area code included, US phone numbers.
-* The Employee List will reside in a database and be accessed through API integration
-* An Add Employee function will be implemented
+* ~~Phone numbers will be validated 10 digit, area code included, US phone numbers.~~
+* The Employee List will reside in a database and be accessed through API integration.
+* ~~An Add Employee function will be implemented.~~
 * A search function to filter the employee list will be available, based on Job Title, Name, and/or ID
 * An Email Address field will be added for each employee file
-* All fields will be required for any entry/modification
+* ~~All fields will be required for any entry/modification~~
 
 ## Disclosure
 

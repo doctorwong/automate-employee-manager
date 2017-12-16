@@ -81,6 +81,8 @@ body {
   border: none;
   color: white;
   background-color: #bdbdbd;
+  margin-right: 15px;
+  
 }
 
 .neutralButton:hover {

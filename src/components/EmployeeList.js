@@ -12,6 +12,7 @@ class EmployeeList extends Component {
               )
             })
           }
+          <li name={'Add Employee'} className="listText" key='0' onClick={()=>{this.props.addEmployee()}}><strong> Add Employee </strong> </li>
         </ul>
       </div>
     )
