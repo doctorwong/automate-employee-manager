@@ -43,7 +43,7 @@ The save and cancel buttons will only be accessible when modifications have been
 
 ## Future Functionality
 
-To be aware of, but not currently implemented changes.  Recent implementations are ~~displayed struck through~~
+To be aware of, but not currently implementedgit 
 
 * ~~Phone numbers will be validated 10 digit, area code included, US phone numbers.~~
 * The Employee List will reside in a database and be accessed through API integration.
