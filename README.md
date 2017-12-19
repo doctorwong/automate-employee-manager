@@ -31,6 +31,7 @@ All fields except for ID are editable.
 * Accepted as regular digits or formatted as a US number
 * If entered as the former will be displayed as the latter
 *Title* - Any characters allowed, to a maximum of 30 characters
+*Email* - Any valid email address, to a maximum of 30 characters
 
 #### Save, Cancel, Delete
 
@@ -41,6 +42,12 @@ All fields except for ID are editable.
 
 The save and cancel buttons will only be accessible when modifications have been made.
 
+#### Search
+
+* The search bar will compare any inputs to all fields on all employees, and filter the employee list for any employee that has at least one match.
+* The clear button will empty the search field and revert to display ALL employees.
+* Adding, modifying, or deleting employees while the search field is populated will update the results.
+
 ## Future Functionality
 
 To be aware of, but not currently implementedgit 
@@ -48,8 +55,8 @@ To be aware of, but not currently implementedgit
 * ~~Phone numbers will be validated 10 digit, area code included, US phone numbers.~~
 * The Employee List will reside in a database and be accessed through API integration.
 * ~~An Add Employee function will be implemented.~~
-* A search function to filter the employee list will be available, based on Job Title, Name, and/or ID
-* An Email Address field will be added for each employee file
+* ~~A search function to filter the employee list will be available, based on Job Title, Name, and/or ID~~
+* ~~An Email Address field will be added for each employee file~~
 * ~~All fields will be required for any entry/modification~~
 
 ## Disclosure
