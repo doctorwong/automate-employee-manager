@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="0"
+            tests="6">
+
+  <testsuite name="tests"
+    errors="0" failures="0" hostname="" id="" package="tests" skipped="0"
+    tests="6" time="10.01" timestamp="Fri, 26 Jan 2018 22:12:25 GMT">
+  
+    <testcase name="Save Info Test" classname="tests" time="6.749" assertions="3">
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Cancel Button Test" classname="tests" time="0.8240" assertions="1">
+
+    
+    </testcase>
+  
+    <testcase name="Name Field Test" classname="tests" time="0.7440" assertions="2">
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Phone Number Field Test" classname="tests" time="0.1850" assertions="0">
+    </testcase>
+  
+    <testcase name="Title Field Test" classname="tests" time="0.2010" assertions="0">
+    </testcase>
+  
+    <testcase name="Navigation Link Test" classname="tests" time="1.311" assertions="10">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+
+  
+
+  
+  </testsuite>
+</testsuites>
