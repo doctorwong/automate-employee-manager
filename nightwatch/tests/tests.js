@@ -41,9 +41,28 @@ module.exports = {
         //verifies each field is changed to the new value
         browser.click(selectors.saveButton)
         functions.validate(browser, selectors.inputs, data.validData)
+
+        //If I click to a different page and then back to the old employee, do the saved changes persist.
+        browser.click("[name='employee2']")
+        browser.click("[name='employee1']")
+        functions.validate(browser, selectors.inputs, data.validData)
     },
 
     'Cancel Button Test': browser => {
+        //verifies that the user can save employee information after submitting valid outputs.
+
+        //clears the existing values and enters new values
+        functions.setAll(browser, selectors.inputs, data.validData)
+
+        //navigates to a different page and back to the first page and checks if fields are changed
+        browser
+            .click("[name='employee2']")
+            .click("[name='employee1']")
+            .assert.valueContains(selectors.inputs[0], data.employees[0]['name'])
+            .assert.valueContains(selectors.inputs[1], data.employees[0]['phone'])
+    },
+
+    'Navigate Away After Changes Test': browser => {
         //verifies that the user can save employee information after submitting valid outputs.
 
         //clears the existing values and enters new values
@@ -73,43 +92,44 @@ module.exports = {
     },
 
     'Phone Number Field Test': browser => {
-        /* THIS IS A WORKAROUND: ERROR MESSAGES FOR ALL THESE TESTS ARE NOT DISPLAYING PROPERLY,
-        */
 
+        /* BUG
         //verifies that an error message appears when the phone number field is entered with non-numeric characters
         functions.setValue(browser, selectors.inputs[1], 'abcabcabcd')
         browser
             .click(selectors.saveButton)
-            .expect.element(selectors.errorCard).text.to.contain('T he phone number must be 10 digits long.');
+            .expect.element(selectors.errorCard).text.to.contain('The phone number must be 10 digits long.');
+        
+        */
 
         //verifies that an error message appears when the phone number field is less than ten digits long
         functions.setValue(browser, selectors.inputs[1], '123123123')
         browser
             .click(selectors.saveButton)
-            .expect.element(selectors.errorCard).text.to.contain('T he phone number must be 10 digits long.');
+            .expect.element(selectors.errorCard).text.to.contain('The phone number must be 10 digits long.');
 
-        /*BUG
         //verifies that an error message appears when the phone number field is greater than ten digits long
         functions.setValue(browser, selectors.inputs[1], '12312312345')
         browser.click(selectors.saveButton)
-        browser.expect.element('div[class = "errorCard"]').text.to.contain('T he phone number must be 10 digits long.');
-        */
+        browser.expect.element('div[class = "errorCard"]').text.to.contain('The phone number must be 10 digits long.');
 
-        /* Not working
+
+
         //verifies that an error message appears when the phone number field is blank
         browser.clearValue('input[name = "phoneEntry"]')
         browser.click(selectors.saveButton)
-        browser.expect.element('div[class = "errorCard"]').text.to.contain('T he phone number must be 10 digits long.');
-        */
+        browser.expect.element('div[class = "errorCard"]').text.to.contain('The phone number must be 10 digits long.');
+
     },
 
     'Title Field Test': browser => {
-
-        /* ERROR MESSAGE DOES NOT DISPLAY FOR THIS TEST
+        
+        /* BUG
         //verifies that an error message appears when the title field is greater than 30 digits long
         functions.setValue(browser, selectors.inputs[2], 'supercalifrasgilisticexpialidocious')
         browser.click(selectors.saveButton)
         browser.expect.element(selectors.errorCard).text.to.contain('The title field must be between 1 and 30 characters long.');
+        
   
         //verifies that an error message appears when the title field is blank
         browser.click(selectors.inputs[2])

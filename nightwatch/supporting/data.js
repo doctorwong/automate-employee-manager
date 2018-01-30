@@ -12,6 +12,6 @@ module.exports = {
     validData: ['foo', '1231234567', 'foobar'],
     tooLong: 'supercalifragilisticexpialidocious',
     nameError:'The name field must be between 1 and 30 characters long.',
-    phoneError: 'T he phone number must be 10 digits long.',
+    phoneError: 'The phone number must be 10 digits long.',
     titleError: 'The title field must be between 1 and 30 characters long.'
 }

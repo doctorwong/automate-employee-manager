@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites errors="0"
-            failures="1"
-            tests="8">
+            failures="0"
+            tests="9">
 
   <testsuite name="tests"
-    errors="0" failures="1" hostname="" id="" package="tests" skipped="4"
-    tests="8" time="16.27" timestamp="Tue, 30 Jan 2018 19:21:29 GMT">
+    errors="0" failures="0" hostname="" id="" package="tests" skipped="0"
+    tests="9" time="16.63" timestamp="Tue, 30 Jan 2018 21:01:51 GMT">
   
-    <testcase name="Visibility Test" classname="tests" time="12.81" assertions="7">
+    <testcase name="Visibility Test" classname="tests" time="8.301" assertions="7">
 
     
 
@@ -16,15 +16,6 @@
     
 
     
-
-    
-
-    
-
-    
-    </testcase>
-  
-    <testcase name="Save Button Test" classname="tests" time="1.418" assertions="3">
 
     
 
@@ -33,15 +24,156 @@
     
     </testcase>
   
-    <testcase name="Cancel Button Test" classname="tests" time="0.8750" assertions="2">
+    <testcase name="Save Button Test" classname="tests" time="1.603" assertions="6">
+
+    
+
+    
+
+    
+
+    
 
     
 
     
     </testcase>
   
-    <testcase name="Name Field Test" classname="tests" time="1.168" assertions="1">  <failure message="Expected element &lt;div[class = &#34;errorCard&#34;]&gt; text to contain: &#34;The name field must be between 1 and 30 characters long.&#34; - element was not found">    at Object.Name Field Test (C:\devmtn\automate-employee-manager\nightwatch\tests\tests.js:67:21)
-    at _combinedTickCallback (internal/process/next_tick.js:131:7)</failure>
+    <testcase name="Cancel Button Test" classname="tests" time="0.7910" assertions="2">
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Navigate Away After Changes Test" classname="tests" time="0.7930" assertions="2">
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Name Field Test" classname="tests" time="0.7500" assertions="2">
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Phone Number Field Test" classname="tests" time="0.9150" assertions="3">
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Title Field Test" classname="tests" time="0.1870" assertions="0">
+    </testcase>
+  
+    <testcase name="Navigation Link Test" classname="tests" time="1.277" assertions="10">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Employee Information Test" classname="tests" time="2.013" assertions="40">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
 
     
     </testcase>
@@ -49,28 +181,6 @@
 
   
 
-  
-    
-    <testcase
-      name="Phone Number Field Test" classname="tests">
-      <skipped />
-    </testcase>
-    
-    <testcase
-      name="Title Field Test" classname="tests">
-      <skipped />
-    </testcase>
-    
-    <testcase
-      name="Navigation Link Test" classname="tests">
-      <skipped />
-    </testcase>
-    
-    <testcase
-      name="Employee Information Test" classname="tests">
-      <skipped />
-    </testcase>
-    
   
   </testsuite>
 </testsuites>
