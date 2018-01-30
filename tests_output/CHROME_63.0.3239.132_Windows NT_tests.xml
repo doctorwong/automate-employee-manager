@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="1"
+            tests="8">
+
+  <testsuite name="tests"
+    errors="0" failures="1" hostname="" id="" package="tests" skipped="4"
+    tests="8" time="16.27" timestamp="Tue, 30 Jan 2018 19:21:29 GMT">
+  
+    <testcase name="Visibility Test" classname="tests" time="12.81" assertions="7">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Save Button Test" classname="tests" time="1.418" assertions="3">
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Cancel Button Test" classname="tests" time="0.8750" assertions="2">
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Name Field Test" classname="tests" time="1.168" assertions="1">  <failure message="Expected element &lt;div[class = &#34;errorCard&#34;]&gt; text to contain: &#34;The name field must be between 1 and 30 characters long.&#34; - element was not found">    at Object.Name Field Test (C:\devmtn\automate-employee-manager\nightwatch\tests\tests.js:67:21)
+    at _combinedTickCallback (internal/process/next_tick.js:131:7)</failure>
+
+    
+    </testcase>
+  
+
+  
+
+  
+    
+    <testcase
+      name="Phone Number Field Test" classname="tests">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="Title Field Test" classname="tests">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="Navigation Link Test" classname="tests">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="Employee Information Test" classname="tests">
+      <skipped />
+    </testcase>
+    
+  
+  </testsuite>
+</testsuites>
