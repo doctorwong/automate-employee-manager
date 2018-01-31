@@ -36,15 +36,13 @@ All fields except for ID are editable.  When saving a change, it will persist as
 
 ## Future Functionality
 
-To be aware of, but not currently implemented
+To be aware of, but not currently implemented (items recently added to the list are **bold**, recently implemented are ~crossed out~)
 
 * ~Phone numbers will be validated 10 digit, area code included, US phone numbers.~
 * The Employee List will reside in a database and be accessed through API integration
-* ~An Add Employee function will be implemented~
 * A Remove Employee function will be implemented
 * A search function to filter the employee list will be available, based on Job Title, Name, and/or ID
 * An Email Address field will be added for each employee file
-* ~All fields will be required for any entry/modification~
 
 ## Disclosure
 
