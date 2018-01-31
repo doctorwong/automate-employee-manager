@@ -15,22 +15,34 @@ The application will load a simulated list of employees, and allow modifications
 
 All fields except for ID are editable.  When saving a change, it will persist as you access other records and navigate back to the desired employee.  The save and cancel buttons will only be accessible when modifications have been made, and the cancel button will revert the employee's file back to the most recently saved version.  Every editable field must be populated to save.
 
-## Change Log for Version 1.2
+* Note - while it would be possible to check the name or title fields for special characters, enough special characters *should* be allowed that it would be impractical to only check for a few, and exhaustively difficult to list ALL the characters that should *not* be allowed.
 
-* Error messages fixed
-* Can now save after error is presented
-* Add employee functionality added
+## Change Log for Version 1.3
+
+* Added `name` properties to the field labels, to make them easier to check in automation.
+* Undocumented change for Version 1.2, added version tracker to the bottom of the screen
+* Phone numbers accepted in any of the following formats:
+> 1234567890
+> 123-456-7890
+> (123)456-7890
+> (123) 456-7890
+> 123 456 7890
+> 123.456.7890
+> +91 (123) 456-7890
+> Error Message: 'The phone number must be a valid 10 digit US number.'
+* Fixed title field validation for lengths longer than 30 characters, also no longer tracks error for title field when NAME is longer than 30 characters.
+* The save button is disabled when any field is empty.
+* Empty fields are highlighted in red (unless the cursor is still in that field)
 
 ## Future Functionality
 
-To be aware of, but not currently implemented
+To be aware of, but not currently implemented (items recently added to the list are **bold**, recently implemented are ~crossed out~)
 
-* Phone numbers will be validated 10 digit, area code included, US phone numbers.
+* ~Phone numbers will be validated 10 digit, area code included, US phone numbers.~
 * The Employee List will reside in a database and be accessed through API integration
-* ~An Add Employee function will be implemented~
+* A Remove Employee function will be implemented
 * A search function to filter the employee list will be available, based on Job Title, Name, and/or ID
 * An Email Address field will be added for each employee file
-* ~All fields will be required for any entry/modification~
 
 ## Disclosure
 
