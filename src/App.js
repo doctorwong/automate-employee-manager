@@ -23,7 +23,7 @@ class App extends Component {
 
   addEmployee() {
     let tempEmployees = this.state.employees;
-    tempEmployees.push(new Employee(this.employeeCounter, 'New Employee', 1234567890, 'New Employee'))
+    tempEmployees.push(new Employee(this.employeeCounter, 'New Employee', '1234567890', 'New Employee'))
     this.employeeCounter++
     this.setState({ employees: tempEmployees })
   }
@@ -45,7 +45,7 @@ class App extends Component {
           <EmployeeEditor selected={this.state.selectedEmployee} refreshList={this.refresh} />
         </div>
         <footer className="footer">
-          Version 1.2
+          Version 1.3
         </footer>
       </div>
     )
