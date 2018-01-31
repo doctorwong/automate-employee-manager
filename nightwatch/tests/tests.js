@@ -20,13 +20,13 @@ module.exports = {
         //checks elements for visibility
 
         browser
-            .assert.visible('.titleBar')
-            .assert.visible('.listText')
-            .assert.visible('.materialInput')
-            .assert.visible('.confirmationButton')
-            .assert.visible('.neutralButton')
-            .assert.visible('#employeeID')
-            .assert.visible('#employeeTitle')
+            .verify.visible('.titleBar')
+            .verify.visible('.listText')
+            .verify.visible('.materialInput')
+            .verify.visible('.confirmationButton')
+            .verify.visible('.neutralButton')
+            .verify.visible('#employeeID')
+            .verify.visible('#employeeTitle')
     },
 
     'Save Button Test': (browser) => {
@@ -58,11 +58,11 @@ module.exports = {
         browser
             .click("[name='employee2']")
             .click("[name='employee1']")
-            .assert.valueContains(selectors.inputs[0], data.employees[0]['name'])
-            .assert.valueContains(selectors.inputs[1], data.employees[0]['phone'])
+            .verify.valueContains(selectors.inputs[0], data.employees[0]['name'])
+            .verify.valueContains(selectors.inputs[1], data.employees[0]['phone'])
     },
 
-    'Navigate Away After Changes Test': browser => {
+    'Navigating Away After Changes Without Saving Test': browser => {
         //verifies that the user can save employee information after submitting valid outputs.
 
         //clears the existing values and enters new values
@@ -74,8 +74,8 @@ module.exports = {
         //verifies fields were not changed
         browser
             .click(selectors.cancelButton)
-            .assert.valueContains(selectors.inputs[0], data.employees[0]['name'])
-            .assert.valueContains(selectors.inputs[1], data.employees[0]['phone'])
+            .verify.valueContains(selectors.inputs[0], data.employees[0]['name'])
+            .verify.valueContains(selectors.inputs[1], data.employees[0]['phone'])
     },
 
     'Name Field Test': browser => {
@@ -155,9 +155,9 @@ module.exports = {
         for (let i = 0; i < selectors.employeeProfiles.length; i++) {
             browser
                 .click(selectors.employeeProfiles[i])
-                .assert.valueContains(selectors.inputs[0], data.employees[i]['name'])
-                .assert.valueContains(selectors.inputs[1], data.employees[i]['phone'])
-                .assert.valueContains(selectors.inputs[2], data.employees[i]['title'])
+                .verify.valueContains(selectors.inputs[0], data.employees[i]['name'])
+                .verify.valueContains(selectors.inputs[1], data.employees[i]['phone'])
+                .verify.valueContains(selectors.inputs[2], data.employees[i]['title'])
                 .expect.element(selectors.employeeID).text.to.contain(data.employees[i]['id'])
         }
     }
