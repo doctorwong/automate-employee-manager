@@ -1,5 +1,6 @@
 module.exports = {
 
+    displays: ['.titleBar', '.confirmationButton', '.neutralButton', '#employeeID', '#employeeTitle'],
     inputs: ['[name = "nameEntry"]', '[name = "phoneEntry"]', '[name = "titleEntry"]'],
     employeeID: '#employeeID',
     saveButton: 'button[name= "save"]',

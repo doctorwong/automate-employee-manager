@@ -2,6 +2,15 @@ const data = require('./data.js')
 const selectors = require('./selectors.js')
 
 module.exports = {
+
+    checkVisibile: (browser, selectors) =>
+    {
+        selectors.forEach(display => {
+            browser.verify.visible(display)
+        });
+
+    },
+
     setAll: (browser, selectors, data) =>
     //Takes an array of fields and an array of corresponding data of the same length
     //Clears pre-existing data in those fields and replaces them with data given
@@ -22,7 +31,6 @@ module.exports = {
         browser
             .clearValue(selector)
             .setValue(selector, data)
-            .click(selectors.saveButton)
     },
 
     validate : (browser, selectors, data) =>
@@ -31,7 +39,7 @@ module.exports = {
         //Raises an assertion if the data in the field does not match data input.
         for(let i=0; i<selectors.length; i++)
         {
-            browser.assert.valueContains(selectors[i], data[i]) 
+            browser.verify.valueContains(selectors[i], data[i]) 
         };
 
 
