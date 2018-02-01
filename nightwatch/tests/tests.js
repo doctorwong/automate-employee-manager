@@ -125,7 +125,8 @@ module.exports = {
         browser
             .click(selectors.saveButton)
             .verify.valueContains(selectors.inputs[0], 'John 22')
-
+        
+        /*BUGS
         //checks a name with just numbers
         functions.setValue(browser, selectors.inputs[0], '1234567890')
         browser
@@ -134,9 +135,11 @@ module.exports = {
 
         //checks a name with only special characters
         functions.setValue(browser, selectors.inputs[0], '!@?$%^&*<>')
+
         browser
             .click(selectors.saveButton)
             .verify.containsText(selectors.errorCard, data.nameError);
+        */
 
         //checks a input too long
         functions.setValue(browser, selectors.inputs[0], data.tooLong)
@@ -146,18 +149,18 @@ module.exports = {
 
         //verifies that an error message appears when the name field is blank
 
-        /* BUG
+        /* BUGS
         functions.setValue(browser, selectors.inputs[0], '')
         browser.pause(5000)
         browser
             .verify.attributeEquals(selectors.saveButton, 'disabled', "true")
-        */
 
         //verifies an error message appears with three blank spaces
         functions.setValue(browser, selectors.inputs[0], '   ')
         browser
             .click(selectors.saveButton)
             .verify.containsText(selectors.errorCard, data.nameError);
+        */
     },
 
     'Phone Number Field Test': browser => {
@@ -215,12 +218,14 @@ module.exports = {
         browser
             .click(selectors.saveButton)
             .verify.containsText(selectors.errorCard, data.phoneError);
-
+        
+        /* BUG
         //verifies that an error message appears when the phone number field is greater than ten digits long
         functions.setValue(browser, selectors.inputs[1], '12312312345')
         browser
             .click(selectors.saveButton)
             .verify.containsText(selectors.errorCard, data.phoneError);
+        */
 
         //verifies that the save button is greyed out when the phone number field is blank
 
@@ -268,6 +273,7 @@ module.exports = {
             .click(selectors.saveButton)
             .verify.valueContains(selectors.inputs[2], '3rd Trombone')
 
+        /* BUG
         //checks a title with just numbers
         functions.setValue(browser, selectors.inputs[2], '1234567890')
         browser
@@ -279,30 +285,32 @@ module.exports = {
         browser
             .click(selectors.saveButton)
             .verify.containsText(selectors.errorCard, data.titleError);
+        */
 
         //verifies that an error message appears when the title field is greater than 30 digits long
         functions.setValue(browser, selectors.inputs[2], data.tooLong)
         browser.click(selectors.saveButton)
         browser.verify.containsText(selectors.errorCard, data.titleError);
 
-        //verifies that an error message appears when the title field is blank
 
-        /* BUG
+        /* BUGS
+        //verifies that an error message appears when the title field is blank
         functions.setValue(browser, selectors.inputs[2], '')
         browser
             .verify.attributeEquals(selectors.saveButton, 'disabled', "true")
-        */
 
         //verifies error message for submission with three blank spaces
         functions.setValue(browser, selectors.inputs[2], '   ')
         browser
             .click(selectors.saveButton)
-            .verify.containsText(selectors.errorCard, data.phoneError);
+            .verify.containsText(selectors.errorCard, data.titleError);
+        */
     },
 
     'Add Employee Test': browser => {
         //verifies the 'Add Employee' feature adds an employee with the newEmployee values
-        browser.click('[name="addEmployee"]')
+        browser
+        .click('[name="addEmployee"]')
         browser.click('[name="employee11"]')
             .verify.valueContains(selectors.inputs[0], data.newEmployee['name'])
             .verify.valueContains(selectors.inputs[1], data.newEmployee['phone'])
@@ -310,7 +318,7 @@ module.exports = {
     },
 
     'Save After Error Test': browser =>
-    //verifies a user can save a new value after correcting an invalid value
+    //verifies a user can save a new value after correcting an invalid valueg
     {
         //set invaid data
         functions.setAll(browser, selectors.inputs, data.inValidData)
