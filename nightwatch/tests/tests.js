@@ -17,13 +17,14 @@ module.exports = {
     },
     
     'User Interface Test': browser => {
+        //See QW-97
         //checks elements for visibility
         functions.checkVisibile(browser, selectors.displays)
         functions.checkVisibile(browser, selectors.inputs)
         functions.checkVisibile(browser, selectors.employeeProfiles)
     },
 
-    'Navigation Link Test': browser => {
+    'Employee Link Test': browser => {
         //See QW-104
         //checks that clicking each employee will bring their file up in the editor
 
@@ -34,80 +35,9 @@ module.exports = {
         };
     },
 
-    'Save and Cancel Buttons Visibility Test': (browser) => {
-        //See QW-103
-        //check if save and cancel buttons are visible if no edits are made
-        browser.verify.attributeEquals(selectors.saveButton, 'disabled', "true")
-        browser.verify.attributeEquals(selectors.cancelButton, 'disabled', "true")
-
-        //clears the existing values and enters new values
-        functions.setAll(browser, selectors.inputs, data.validData)
-        //checks if the buttons are visible
-        browser.isVisible(selectors.saveButton)
-        browser.isVisible(selectors.cancelButton)
-
-        //checks if save button is disabled if any of the fields are empty
-        functions.setAll(browser, selectors.inputs, data.validData)
-        browser.click(selectors.saveButton)
-        browser.clearValue(selectors.inputs[0]);
-        browser.verify.attributeEquals(selectors.saveButton, 'disabled', "true")
-
-        functions.setValue(browser, selectors.inputs[0], data.validData[0])
-        browser.click(selectors.saveButton)
-        browser.clearValue(selectors.inputs[1]);
-        browser.verify.attributeEquals(selectors.saveButton, 'disabled', "true")
-
-        functions.setValue(browser, selectors.inputs[1], data.validData[1])
-        browser.click(selectors.saveButton)
-        browser.clearValue(selectors.inputs[2]);
-        browser.verify.attributeEquals(selectors.saveButton, 'disabled', "true")
-    },
-
-    'Save Button Functionality Test': (browser) => {
-        //QA-88 (Save Button Functionality Button)
-
-        //verifies each field is changed to the new value
-        functions.setAll(browser, selectors.inputs, data.validData)
-        browser.click(selectors.saveButton)
-        functions.validate(browser, selectors.inputs, data.validData)
-
-        //Checks if changes persist after a user navigates to a different page.
-        browser.click("[name='employee2']")
-        browser.click("[name='employee1']")
-        functions.validate(browser, selectors.inputs, data.validData)
-    },
-
-    'Cancel Button Functionality Test': browser => {
-        //verifies that the user can save employee information after submitting valid outputs.
-
-        //changes information
-        functions.setAll(browser, selectors.inputs, data.validData)
-        //clicks the cancel button
-        browser.click(selectors.cancelButton)
-        //verifies no changes are made
-        browser
-            .verify.valueContains(selectors.inputs[0], data.employees[0]['name'])
-            .verify.valueContains(selectors.inputs[1], data.employees[0]['phone'])
-            .verify.valueContains(selectors.inputs[2], data.employees[0]['title'])
-    },
-
-    'Navigating Away From Changes Without Saving Test': browser => {
-        //QW-105
-        //changes information
-        functions.setAll(browser, selectors.inputs, data.validData)
-
-        //navigates to a different page and back to the first page and checks if fields are changed
-        browser
-            .click("[name='employee2']")
-            .click("[name='employee1']")
-            .verify.valueContains(selectors.inputs[0], data.employees[0]['name'])
-            .verify.valueContains(selectors.inputs[1], data.employees[0]['phone'])
-            .verify.valueContains(selectors.inputs[2], data.employees[0]['title'])
-    },
-
     'Name Field Inputs Test': browser => {
+        //QW-106
         //verifies that an error message appears when the name field is longer than 30 characters
-
         //checks the input foo; should validate
         functions.setValue(browser, selectors.inputs[0], data.validData[0])
         browser
@@ -126,7 +56,6 @@ module.exports = {
             .click(selectors.saveButton)
             .verify.valueContains(selectors.inputs[0], 'John 22')
         
-        /*BUGS
         //checks a name with just numbers
         functions.setValue(browser, selectors.inputs[0], '1234567890')
         browser
@@ -135,11 +64,9 @@ module.exports = {
 
         //checks a name with only special characters
         functions.setValue(browser, selectors.inputs[0], '!@?$%^&*<>')
-
         browser
             .click(selectors.saveButton)
             .verify.containsText(selectors.errorCard, data.nameError);
-        */
 
         //checks a input too long
         functions.setValue(browser, selectors.inputs[0], data.tooLong)
@@ -147,24 +74,15 @@ module.exports = {
             .click(selectors.saveButton)
             .verify.containsText(selectors.errorCard, data.nameError);
 
-        //verifies that an error message appears when the name field is blank
-
-        /* BUGS
-        functions.setValue(browser, selectors.inputs[0], '')
-        browser.pause(5000)
-        browser
-            .verify.attributeEquals(selectors.saveButton, 'disabled', "true")
-
         //verifies an error message appears with three blank spaces
         functions.setValue(browser, selectors.inputs[0], '   ')
         browser
             .click(selectors.saveButton)
             .verify.containsText(selectors.errorCard, data.nameError);
-        */
     },
 
     'Phone Number Field Test': browser => {
-
+        //QW-107
         //1.3 - Test phone number in 1234567890 format
         functions.setValue(browser, selectors.inputs[1], '1234567890')
         browser
@@ -218,22 +136,17 @@ module.exports = {
         browser
             .click(selectors.saveButton)
             .verify.containsText(selectors.errorCard, data.phoneError);
-        
-        /* BUG
+
         //verifies that an error message appears when the phone number field is greater than ten digits long
         functions.setValue(browser, selectors.inputs[1], '12312312345')
         browser
             .click(selectors.saveButton)
             .verify.containsText(selectors.errorCard, data.phoneError);
-        */
 
         //verifies that the save button is greyed out when the phone number field is blank
-
-        /* BUG
         functions.setValue(browser, selectors.inputs[1], '')
         browser
             .verify.attributeEquals(selectors.saveButton, 'disabled', "true")
-        */
 
         //verifies an error message appears with three blank spaces
         functions.setValue(browser, selectors.inputs[1], '   ')
@@ -255,6 +168,7 @@ module.exports = {
     },
 
     'Title Field Test': browser => {
+        //See QW-108
         //verifies form is saved if a valid input is submitted
         functions.setValue(browser, selectors.inputs[2], 'Trombone')
         browser
@@ -273,7 +187,6 @@ module.exports = {
             .click(selectors.saveButton)
             .verify.valueContains(selectors.inputs[2], '3rd Trombone')
 
-        /* BUG
         //checks a title with just numbers
         functions.setValue(browser, selectors.inputs[2], '1234567890')
         browser
@@ -285,29 +198,114 @@ module.exports = {
         browser
             .click(selectors.saveButton)
             .verify.containsText(selectors.errorCard, data.titleError);
-        */
 
         //verifies that an error message appears when the title field is greater than 30 digits long
         functions.setValue(browser, selectors.inputs[2], data.tooLong)
         browser.click(selectors.saveButton)
         browser.verify.containsText(selectors.errorCard, data.titleError);
 
-
-        /* BUGS
-        //verifies that an error message appears when the title field is blank
-        functions.setValue(browser, selectors.inputs[2], '')
-        browser
-            .verify.attributeEquals(selectors.saveButton, 'disabled', "true")
-
         //verifies error message for submission with three blank spaces
         functions.setValue(browser, selectors.inputs[2], '   ')
         browser
             .click(selectors.saveButton)
             .verify.containsText(selectors.errorCard, data.titleError);
-        */
+    },
+
+    'Save Button Functionality Test': (browser) => {
+        //QA-88 (Save Button Functionality Button)
+
+        //verifies each field is changed to the new value
+        functions.setAll(browser, selectors.inputs, data.validData)
+        browser.click(selectors.saveButton)
+        functions.validate(browser, selectors.inputs, data.validData)
+
+        //Checks if changes persist after a user navigates to a different page.
+        browser.click("[name='employee2']")
+        browser.click("[name='employee1']")
+        functions.validate(browser, selectors.inputs, data.validData)
+    },
+
+    'Cancel Button Functionality Test': browser => {
+        //QW-89
+        //verifies that the user can save employee information after submitting valid outputs.
+
+        //changes information
+        functions.setAll(browser, selectors.inputs, data.validData)
+        //clicks the cancel button
+        browser.click(selectors.cancelButton)
+        //verifies no changes are made
+        browser
+            .verify.valueContains(selectors.inputs[0], data.employees[0]['name'])
+            .verify.valueContains(selectors.inputs[1], data.employees[0]['phone'])
+            .verify.valueContains(selectors.inputs[2], data.employees[0]['title'])
+    },
+
+    'Save and Cancel Button Accessibility Test': (browser) => {
+        //See QW-103
+        //check if save and cancel buttons are visible if no edits are made
+        browser.verify.attributeEquals(selectors.saveButton, 'disabled', "true")
+        browser.verify.attributeEquals(selectors.cancelButton, 'disabled', "true")
+
+        //clears the existing values and enters new values
+        functions.setAll(browser, selectors.inputs, data.validData)
+        //checks if the buttons are visible
+        functions.buttonEnabled(selectors.saveButton, browser)
+        functions.buttonEnabled(selectors.cancelButton, browser)
+
+        //checks if save button is disabled if any of the fields are empty
+        functions.setAll(browser, selectors.inputs, data.validData)
+        browser.click(selectors.saveButton)
+        browser.clearValue(selectors.inputs[0]);
+        browser.verify.attributeEquals(selectors.saveButton, 'disabled', "true")
+
+        functions.setValue(browser, selectors.inputs[0], data.validData[0])
+        browser.click(selectors.saveButton)
+        browser.clearValue(selectors.inputs[1]);
+        browser.verify.attributeEquals(selectors.saveButton, 'disabled', "true")
+
+        functions.setValue(browser, selectors.inputs[1], data.validData[1])
+        browser.click(selectors.saveButton)
+        browser.clearValue(selectors.inputs[2]);
+        browser.verify.attributeEquals(selectors.saveButton, 'disabled', "true")
+    },
+
+    'Navigating Away From Changes Without Saving Test': browser => {
+        //QW-105
+        //changes information
+        functions.setAll(browser, selectors.inputs, data.validData)
+
+        //navigates to a differpent page and back to the first page and checks if fields are changed
+        browser
+            .click("[name='employee2']")
+            .click("[name='employee1']")
+            .verify.valueContains(selectors.inputs[0], data.employees[0]['name'])
+            .verify.valueContains(selectors.inputs[1], data.employees[0]['phone'])
+            .verify.valueContains(selectors.inputs[2], data.employees[0]['title'])
+    },
+
+    'Invalid Fields Highlighted in Red Test': browser =>
+    {
+        //QW-119
+        //checks that invalid fields are highlighted in red
+        functions.setValue(browser, selectors.inputs[0], data.tooLong)
+        browser
+            .click(selectors.saveButton)
+            browser.verify.cssClassPresent('[name = "nameEntry"]', "invalidInfo")
+        
+        functions.setAll(browser, selectors.inputs, data.validData)
+        functions.setValue(browser, selectors.inputs[1], data.tooLong)
+        browser.click(selectors.saveButton)
+            browser.verify.cssClassPresent('[name = "phoneEntry"]', "invalidInfo")
+        
+        functions.setAll(browser, selectors.inputs, data.validData)
+        functions.setValue(browser, selectors.inputs[2], data.tooLong)
+        browser
+            .click(selectors.saveButton)
+            browser.verify.cssClassPresent('[name = "titleEntry"]', "invalidInfo")
     },
 
     'Add Employee Test': browser => {
+        //See QW-109
         //verifies the 'Add Employee' feature adds an employee with the newEmployee values
         browser
         .click('[name="addEmployee"]')
@@ -317,9 +315,9 @@ module.exports = {
             .verify.valueContains(selectors.inputs[2], data.newEmployee['title'])
     },
 
-    'Save After Error Test': browser =>
+    'Save After Error Test': browser => {
+    //QW-111
     //verifies a user can save a new value after correcting an invalid valueg
-    {
         //set invaid data
         functions.setAll(browser, selectors.inputs, data.inValidData)
 
