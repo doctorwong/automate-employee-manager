@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="7"
+            failures="3"
+            tests="13">
+
+  <testsuite name="tests"
+    errors="7" failures="3" hostname="" id="" package="tests" skipped="0"
+    tests="13" time="41.95" timestamp="Fri, 02 Feb 2018 22:13:27 GMT">
+  
+    <testcase name="User Interface Test" classname="tests" time="14.84" assertions="18">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Employee Link Test" classname="tests" time="1.725" assertions="10">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Name Field Inputs Test" classname="tests" time="3.001" assertions="7">
+
+    
+
+    
+
+      <failure message="Testing if value of &lt;div[class = &#34;errorCard&#34;]&gt; contains: &#34;The name field must be between 1 and 30 characters long.&#34;. Element could not be located.">    at Object.Name Field Inputs Test (C:\devmtn\automate-employee-manager\nightwatch\tests\tests.js:63:21)
+    at _combinedTickCallback (internal/process/next_tick.js:131:7)</failure>
+
+      <failure message="Testing if element &lt;div[class = &#34;errorCard&#34;]&gt; contains text: &#34;The name field must be between 1 and 30 characters long.&#34;. Element could not be located.">    at Object.Name Field Inputs Test (C:\devmtn\automate-employee-manager\nightwatch\tests\tests.js:69:21)
+    at _combinedTickCallback (internal/process/next_tick.js:131:7)</failure>
+
+    
+
+      <failure message="Testing if element &lt;div[class = &#34;errorCard&#34;]&gt; contains text: &#34;The name field must be between 1 and 30 characters long.&#34;. Element could not be located.">    at Object.Name Field Inputs Test (C:\devmtn\automate-employee-manager\nightwatch\tests\tests.js:81:21)
+    at _combinedTickCallback (internal/process/next_tick.js:131:7)</failure>
+
+    
+    </testcase>
+  
+    <testcase name="Phone Number Field Test" classname="tests" time="4.683" assertions="14">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+      <failure message="Testing if element &lt;div[class = &#34;errorCard&#34;]&gt; contains text: &#34;The phone number must be a valid 10 digit US number.&#34;. Element could not be located.">    at Object.Phone Number Field Test (C:\devmtn\automate-employee-manager\nightwatch\tests\tests.js:144:21)
+    at _combinedTickCallback (internal/process/next_tick.js:131:7)</failure>
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Title Field Test" classname="tests" time="2.597" assertions="7">
+
+    
+
+    
+
+      <failure message="Testing if value of &lt;div[class = &#34;errorCard&#34;]&gt; contains: &#34;The title field must be between 1 and 30 characters long.&#34;. Element could not be located.">    at Object.Title Field Test (C:\devmtn\automate-employee-manager\nightwatch\tests\tests.js:194:21)
+    at _combinedTickCallback (internal/process/next_tick.js:131:7)</failure>
+
+      <failure message="Testing if element &lt;div[class = &#34;errorCard&#34;]&gt; contains text: &#34;The title field must be between 1 and 30 characters long.&#34;. Element could not be located.">    at Object.Title Field Test (C:\devmtn\automate-employee-manager\nightwatch\tests\tests.js:200:21)
+    at _combinedTickCallback (internal/process/next_tick.js:131:7)</failure>
+
+    
+
+      <failure message="Testing if element &lt;div[class = &#34;errorCard&#34;]&gt; contains text: &#34;The title field must be between 1 and 30 characters long.&#34;. Element could not be located.">    at Object.Title Field Test (C:\devmtn\automate-employee-manager\nightwatch\tests\tests.js:211:21)
+    at _combinedTickCallback (internal/process/next_tick.js:131:7)</failure>
+
+    
+    </testcase>
+  
+    <testcase name="Save Button Functionality Test" classname="tests" time="1.219" assertions="6">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Cancel Button Functionality Test" classname="tests" time="0.9400" assertions="3">
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Save and Cancel Button Accessibility Test" classname="tests" time="2.053" assertions="7">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Navigating Away From Changes Without Saving Test" classname="tests" time="1.002" assertions="3">
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Invalid Fields Highlighted in Red Test" classname="tests" time="2.601" assertions="3">
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Add Employee Test" classname="tests" time="0.5490" assertions="3">
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Save After Error Test" classname="tests" time="2.420" assertions="4">
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Employee Information Test" classname="tests" time="4.315" assertions="40">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+
+  
+    <system-err>
+      ERROR: Unable to locate element: &#34;div[class = &#34;errorCard&#34;]&#34; using: css selector
+    at F.command (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\api\assertions\valueContains.js:50:21)
+    at F.module.exports.BaseAssertion._scheduleAssertion (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\assertion.js:87:17)
+    at F.module.exports.BaseAssertion._executeCommand (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\assertion.js:82:17)
+    at AssertionInstance.commandFn [as _commandFn] (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\assertion.js:180:21)
+    at AsyncTree.runCommand (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\queue.js:154:30)
+    at AsyncTree.runChildNode (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\queue.js:114:8)
+    at AsyncTree.walkDown (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\queue.js:80:10)
+    at AsyncTree.walkUp (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\queue.js:97:8)
+    at AsyncTree.walkDown (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\queue.js:90:12)
+    at AsyncTree.traverse (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\queue.js:73:8)
+ERROR: Unable to locate element: &#34;div[class = &#34;errorCard&#34;]&#34; using: css selector
+    at F.command (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\api\assertions\containsText.js:46:21)
+    at F.module.exports.BaseAssertion._scheduleAssertion (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\assertion.js:87:17)
+    at F.module.exports.BaseAssertion._executeCommand (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\assertion.js:82:17)
+    at AssertionInstance.commandFn [as _commandFn] (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\assertion.js:180:21)
+    at AsyncTree.runCommand (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\queue.js:154:30)
+    at AsyncTree.runChildNode (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\queue.js:114:8)
+    at AsyncTree.walkDown (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\queue.js:80:10)
+    at AsyncTree.walkUp (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\queue.js:97:8)
+    at AsyncTree.walkDown (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\queue.js:90:12)
+    at AsyncTree.traverse (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\queue.js:73:8)
+ERROR: Unable to locate element: &#34;div[class = &#34;errorCard&#34;]&#34; using: css selector
+    at F.command (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\api\assertions\containsText.js:46:21)
+    at F.module.exports.BaseAssertion._scheduleAssertion (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\assertion.js:87:17)
+    at F.module.exports.BaseAssertion._executeCommand (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\assertion.js:82:17)
+    at AssertionInstance.commandFn [as _commandFn] (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\assertion.js:180:21)
+    at AsyncTree.runCommand (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\queue.js:154:30)
+    at AsyncTree.runChildNode (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\queue.js:114:8)
+    at AsyncTree.walkDown (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\queue.js:80:10)
+    at AsyncTree.walkUp (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\queue.js:97:8)
+    at AsyncTree.walkDown (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\queue.js:90:12)
+    at AsyncTree.traverse (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\queue.js:73:8)
+ERROR: Unable to locate element: &#34;div[class = &#34;errorCard&#34;]&#34; using: css selector
+    at F.command (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\api\assertions\containsText.js:46:21)
+    at F.module.exports.BaseAssertion._scheduleAssertion (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\assertion.js:87:17)
+    at F.module.exports.BaseAssertion._executeCommand (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\assertion.js:82:17)
+    at AssertionInstance.commandFn [as _commandFn] (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\assertion.js:180:21)
+    at AsyncTree.runCommand (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\queue.js:154:30)
+    at AsyncTree.runChildNode (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\queue.js:114:8)
+    at AsyncTree.walkDown (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\queue.js:80:10)
+    at AsyncTree.walkUp (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\queue.js:97:8)
+    at AsyncTree.walkDown (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\queue.js:90:12)
+    at AsyncTree.traverse (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\queue.js:73:8)
+ERROR: Unable to locate element: &#34;div[class = &#34;errorCard&#34;]&#34; using: css selector
+    at F.command (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\api\assertions\valueContains.js:50:21)
+    at F.module.exports.BaseAssertion._scheduleAssertion (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\assertion.js:87:17)
+    at F.module.exports.BaseAssertion._executeCommand (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\assertion.js:82:17)
+    at AssertionInstance.commandFn [as _commandFn] (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\assertion.js:180:21)
+    at AsyncTree.runCommand (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\queue.js:154:30)
+    at AsyncTree.runChildNode (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\queue.js:114:8)
+    at AsyncTree.walkDown (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\queue.js:80:10)
+    at AsyncTree.walkUp (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\queue.js:97:8)
+    at AsyncTree.walkDown (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\queue.js:90:12)
+    at AsyncTree.traverse (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\queue.js:73:8)
+ERROR: Unable to locate element: &#34;div[class = &#34;errorCard&#34;]&#34; using: css selector
+    at F.command (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\api\assertions\containsText.js:46:21)
+    at F.module.exports.BaseAssertion._scheduleAssertion (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\assertion.js:87:17)
+    at F.module.exports.BaseAssertion._executeCommand (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\assertion.js:82:17)
+    at AssertionInstance.commandFn [as _commandFn] (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\assertion.js:180:21)
+    at AsyncTree.runCommand (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\queue.js:154:30)
+    at AsyncTree.runChildNode (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\queue.js:114:8)
+    at AsyncTree.walkDown (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\queue.js:80:10)
+    at AsyncTree.walkUp (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\queue.js:97:8)
+    at AsyncTree.walkDown (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\queue.js:90:12)
+    at AsyncTree.traverse (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\queue.js:73:8)
+ERROR: Unable to locate element: &#34;div[class = &#34;errorCard&#34;]&#34; using: css selector
+    at F.command (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\api\assertions\containsText.js:46:21)
+    at F.module.exports.BaseAssertion._scheduleAssertion (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\assertion.js:87:17)
+    at F.module.exports.BaseAssertion._executeCommand (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\assertion.js:82:17)
+    at AssertionInstance.commandFn [as _commandFn] (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\assertion.js:180:21)
+    at AsyncTree.runCommand (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\queue.js:154:30)
+    at AsyncTree.runChildNode (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\queue.js:114:8)
+    at AsyncTree.walkDown (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\queue.js:80:10)
+    at AsyncTree.walkUp (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\queue.js:97:8)
+    at AsyncTree.walkDown (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\queue.js:90:12)
+    at AsyncTree.traverse (C:\Users\DoctaWong\AppData\Roaming\npm\node_modules\nightwatch\lib\core\queue.js:73:8)
+    </system-err>
+  
+
+  
+  </testsuite>
+</testsuites>

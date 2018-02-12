@@ -9,9 +9,11 @@ module.exports = {
         {name: "Lou White", phone: '8727813498', title: 'Full-Stack Developer', id: '8'},
         {name: "Eve Sparks", phone: '8734567810', title: 'Product Manager', id: '9'},
         {name: "Lois Brewer", phone: '8749823456', title: 'Sales Manager', id: '10'}],
+        newEmployee: {name: "New Employee", phone: '1234567890', title: 'New Employee', id: '11'},
     validData: ['foo', '1231234567', 'foobar'],
+    inValidData: ['supercalifragilisticexpialidocious', '1235678901234567890', 'supercalifragilisticexpialidocious'],
     tooLong: 'supercalifragilisticexpialidocious',
     nameError:'The name field must be between 1 and 30 characters long.',
-    phoneError: 'T he phone number must be 10 digits long.',
+    phoneError: 'The phone number must be a valid 10 digit US number.',
     titleError: 'The title field must be between 1 and 30 characters long.'
 }
