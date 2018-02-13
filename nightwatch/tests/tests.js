@@ -17,7 +17,8 @@ module.exports = {
     },
     
     'User Interface Test': browser => {
-        //See QW-97
+    //See QW-97
+        
         //checks elements for visibility
         functions.checkVisibile(browser, selectors.displays)
         functions.checkVisibile(browser, selectors.inputs)
@@ -25,7 +26,7 @@ module.exports = {
     },
 
     'Employee Link Test': browser => {
-        //See QW-104
+    //See QW-104
         //checks that clicking each employee will bring their file up in the editor
 
         for (let i = 0; i < selectors.employeeProfiles.length; i++) {
@@ -36,7 +37,8 @@ module.exports = {
     },
 
     'Name Field Inputs Test': browser => {
-        //QW-106
+    //QW-106
+        
         //verifies that an error message appears when the name field is longer than 30 characters
         //checks the input foo; should validate
         functions.setValue(browser, selectors.inputs[0], data.validData[0])
@@ -63,23 +65,23 @@ module.exports = {
             .verify.valueContains(selectors.inputs[0], 'John-22');
 
         //checks a input too long
-
         functions.setValue(browser, selectors.inputs[0], data.tooLong)
         browser
             .click(selectors.saveButton)
             .verify.containsText(selectors.errorCard, data.nameError);
 
-        //verifies an error message appears with three blank spaces
         /*BUG
+        //verifies an error message appears with three blank spaces      
         functions.setValue(browser, selectors.inputs[0], '   ')
         browser
             .click(selectors.saveButton)
             .verify.containsText(selectors.errorCard, data.nameError);
-            */
+        */
     },
 
     'Phone Number Field Test': browser => {
-        //QW-107
+    //QW-107
+        
         //1.3 - Test phone number in 1234567890 format
         functions.setValue(browser, selectors.inputs[1], '1234567890')
         browser
@@ -140,7 +142,7 @@ module.exports = {
         browser
             .click(selectors.saveButton)
             .verify.containsText(selectors.errorCard, data.phoneError);
-            */
+        */
 
         //verifies an error message appears with three blank spaces
         functions.setValue(browser, selectors.inputs[1], '   ')
@@ -162,7 +164,8 @@ module.exports = {
     },
 
     'Title Field Test': browser => {
-        //See QW-108
+    //See QW-108
+        
         //verifies form is saved if a valid input is submitted
         functions.setValue(browser, selectors.inputs[2], 'Trombone')
         browser
@@ -186,7 +189,6 @@ module.exports = {
         browser
             .click(selectors.saveButton)
             .verify.valueContains(selectors.inputs[2], '3rd-Trombone')
-            //.verify.containsText(selectors.errorCard, data.titleError);
 
         //verifies that an error message appears when the title field is greater than 30 digits long
         functions.setValue(browser, selectors.inputs[2], data.tooLong)
@@ -203,8 +205,8 @@ module.exports = {
     },
 
     'Save Button Functionality Test': (browser) => {
-        //QA-88 (Save Button Functionality Button)
-
+    //QA-88 (Save Button Functionality Button)
+        
         //verifies each field is changed to the new value
         functions.setAll(browser, selectors.inputs, data.validData)
         browser.click(selectors.saveButton)
@@ -217,13 +219,14 @@ module.exports = {
     },
 
     'Cancel Button Functionality Test': browser => {
-        //QW-89
+    //QW-89
         //verifies that the user can save employee information after submitting valid outputs.
 
         //changes information
         functions.setAll(browser, selectors.inputs, data.validData)
         //clicks the cancel button
         browser.click(selectors.cancelButton)
+        
         //verifies no changes are made
         browser
             .verify.valueContains(selectors.inputs[0], data.employees[0]['name'])
@@ -232,13 +235,15 @@ module.exports = {
     },
 
     'Save and Cancel Button Accessibility Test': (browser) => {
-        //See QW-103
+    //See QW-103
+        
         //check if save and cancel buttons are visible if no edits are made
         browser.verify.attributeEquals(selectors.saveButton, 'disabled', "true")
         browser.verify.attributeEquals(selectors.cancelButton, 'disabled', "true")
 
         //clears the existing values and enters new values
         functions.setAll(browser, selectors.inputs, data.validData)
+        
         //checks if the buttons are visible
         functions.buttonEnabled(selectors.saveButton, browser)
         functions.buttonEnabled(selectors.cancelButton, browser)
@@ -261,7 +266,8 @@ module.exports = {
     },
 
     'Navigating Away From Changes Without Saving Test': browser => {
-        //QW-105
+    //QW-105
+        
         //changes information
         functions.setAll(browser, selectors.inputs, data.validData)
 
@@ -276,7 +282,7 @@ module.exports = {
 
     'Invalid Fields Highlighted in Red Test': browser =>
     {
-        //QW-119
+    //QW-119
         //checks that invalid fields are highlighted in red
         functions.setValue(browser, selectors.inputs[0], data.tooLong)
         browser
@@ -296,7 +302,7 @@ module.exports = {
     },
 
     'Add Employee Test': browser => {
-        //See QW-109
+    //See QW-109
         //verifies the 'Add Employee' feature adds an employee with the newEmployee values
         browser
         .click('[name="addEmployee"]')
@@ -309,6 +315,7 @@ module.exports = {
     'Save After Error Test': browser => {
     //QW-111
     //verifies a user can save a new value after correcting an invalid valueg
+        
         //set invaid data
         functions.setAll(browser, selectors.inputs, data.inValidData)
 
@@ -329,7 +336,7 @@ module.exports = {
     },
 
     'Employee Information Test': browser => {
-        //verifies that correct employee information is displayed
+    //verifies that correct employee information is displayed
         for (let i = 0; i < selectors.employeeProfiles.length; i++) {
             browser
                 .click(selectors.employeeProfiles[i])
