@@ -12,7 +12,7 @@ module.exports = {
     },
 
     after: browser => {
-        //closes the browser after each test
+        //closes the browser when finished testing
         browser.end();
     },
     
@@ -27,8 +27,8 @@ module.exports = {
 
     'Employee Link Test': browser => {
     //See QW-104
+        
         //checks that clicking each employee will bring their file up in the editor
-
         for (let i = 0; i < selectors.employeeProfiles.length; i++) {
             browser
                 .click(selectors.employeeProfiles[i])
@@ -37,9 +37,8 @@ module.exports = {
     },
 
     'Name Field Inputs Test': browser => {
-    //QW-106
+    //See QW-106
         
-        //verifies that an error message appears when the name field is longer than 30 characters
         //checks the input foo; should validate
         functions.setValue(browser, selectors.inputs[0], data.validData[0])
         browser
@@ -80,7 +79,7 @@ module.exports = {
     },
 
     'Phone Number Field Test': browser => {
-    //QW-107
+    //See QW-107
         
         //1.3 - Test phone number in 1234567890 format
         functions.setValue(browser, selectors.inputs[1], '1234567890')
@@ -205,7 +204,7 @@ module.exports = {
     },
 
     'Save Button Functionality Test': (browser) => {
-    //QA-88 (Save Button Functionality Button)
+    //See QA-88 (Save Button Functionality Button)
         
         //verifies each field is changed to the new value
         functions.setAll(browser, selectors.inputs, data.validData)
@@ -219,8 +218,7 @@ module.exports = {
     },
 
     'Cancel Button Functionality Test': browser => {
-    //QW-89
-        //verifies that the user can save employee information after submitting valid outputs.
+    //See QW-89
 
         //changes information
         functions.setAll(browser, selectors.inputs, data.validData)
@@ -266,7 +264,7 @@ module.exports = {
     },
 
     'Navigating Away From Changes Without Saving Test': browser => {
-    //QW-105
+    //See QW-105
         
         //changes information
         functions.setAll(browser, selectors.inputs, data.validData)
@@ -282,7 +280,8 @@ module.exports = {
 
     'Invalid Fields Highlighted in Red Test': browser =>
     {
-    //QW-119
+    //See QW-119
+        
         //checks that invalid fields are highlighted in red
         functions.setValue(browser, selectors.inputs[0], data.tooLong)
         browser
@@ -303,6 +302,7 @@ module.exports = {
 
     'Add Employee Test': browser => {
     //See QW-109
+        
         //verifies the 'Add Employee' feature adds an employee with the newEmployee values
         browser
         .click('[name="addEmployee"]')
@@ -313,8 +313,7 @@ module.exports = {
     },
 
     'Save After Error Test': browser => {
-    //QW-111
-    //verifies a user can save a new value after correcting an invalid valueg
+    //See QW-111
         
         //set invaid data
         functions.setAll(browser, selectors.inputs, data.inValidData)
